@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildingAForm</title>
+</head>
+<body>
+    <!-- full name(text input)
+    email address
+    password 
+    feedback category(dropdown/select input)
+    preferred contact method(radio button)
+    additional features of interest(checkboxes)
+    commits(textarea)
+    submit button  -->
+ <h2>
+    submit your feedback 
+ </h2>
+
+ <form>
+    <label for = "name">Name: </label>
+    <input type="text" id="name" name="name" required >
+
+    <label for = "email">Email Address: </label>
+    <input type="email" id="email" name="email" required >
+
+     <label for = "pwd">Password: </label>
+    <input type="password" id="pwd" name="pwd" required >
+
+     <label for = "feedback-type">Feedback: </label>
+    <select id="feedback-type" name="feedback-type"  >
+         <option value="request">Request</option>
+          <option value="issue">Issue</option>
+           <option value="comment">Comment</option>
+      </select>
+  
+    <fieldset>
+      <legend>preferred contact method</legend>
+   
+      <input type="radio" id = "contact-phone" name="contact" value="phone"/>
+      <label for = "contact-phone">Phone </label>
+      
+      <input type="radio" id = "contact-email" name="contact" value="email"/>
+      <label for = "contact-email">Email </label>
+    
+     </fieldset>
+
+     <fieldset>
+      <legend>additional features of interest</legend>
+   
+      <input type="checkbox" id = "dark-mode" name="features" value="dark-mode"/>
+      <label for = "dark-mode">Dark mode </label>
+      
+      <input type="checkbox" id = "bigger-button" name="features" value="buttons"/>
+      <label for = "bigger-button">Email </label>
+    
+     </fieldset>
+    
+
+ </form>
+</body>
+</html>
