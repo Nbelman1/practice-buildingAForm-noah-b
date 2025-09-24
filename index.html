@@ -14,27 +14,30 @@
     additional features of interest(checkboxes)
     commits(textarea)
     submit button  -->
- <h2>
-    submit your feedback 
- </h2>
+ <h2> submit your feedback </h2>
 
  <form>
+     <!-- Full Name -->
     <label for = "name">Name: </label>
     <input type="text" id="name" name="name" required >
-
+     
+    <!-- Email -->
     <label for = "email">Email Address: </label>
     <input type="email" id="email" name="email" required >
-
-     <label for = "pwd">Password: </label>
+     
+    <!-- Password -->
+    <label for = "pwd">Password: </label>
     <input type="password" id="pwd" name="pwd" required >
 
+      <!-- Feedback Category -->
      <label for = "feedback-type">Feedback: </label>
     <select id="feedback-type" name="feedback-type"  >
          <option value="request">Request</option>
           <option value="issue">Issue</option>
            <option value="comment">Comment</option>
       </select>
-  
+     
+   <!-- Preferred Contact Method -->
     <fieldset>
       <legend>preferred contact method</legend>
    
@@ -46,6 +49,7 @@
     
      </fieldset>
 
+     <!-- Additional Features -->
      <fieldset>
       <legend>additional features of interest</legend>
    
@@ -53,11 +57,14 @@
       <label for = "dark-mode">Dark mode </label>
       
       <input type="checkbox" id = "bigger-button" name="features" value="buttons"/>
-      <label for = "bigger-button">Email </label>
-    
-     </fieldset>
-    
+      <label for = "bigger-button">Bigger Buttons </label>
+    </fieldset>
+     <!-- Comments -->
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br><br>
 
+    <!-- Submit -->
+    <button type="submit">Submit</button>
  </form>
 </body>
 </html>
