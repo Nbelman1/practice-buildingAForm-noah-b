@@ -6,65 +6,79 @@
     <title>BuildingAForm</title>
 </head>
 <body>
-    <!-- full name(text input)
-    email address
-    password 
-    feedback category(dropdown/select input)
-    preferred contact method(radio button)
-    additional features of interest(checkboxes)
-    commits(textarea)
-    submit button  -->
- <h2> submit your feedback </h2>
-
- <form>
-     <!-- Full Name -->
-    <label for = "name">Name: </label>
-    <input type="text" id="name" name="name" required >
-     
-    <!-- Email -->
-    <label for = "email">Email Address: </label>
-    <input type="email" id="email" name="email" required >
-     
-    <!-- Password -->
-    <label for = "pwd">Password: </label>
-    <input type="password" id="pwd" name="pwd" required >
-
-      <!-- Feedback Category -->
-     <label for = "feedback-type">Feedback: </label>
-    <select id="feedback-type" name="feedback-type"  >
-         <option value="request">Request</option>
-          <option value="issue">Issue</option>
-           <option value="comment">Comment</option>
-      </select>
-     
-   <!-- Preferred Contact Method -->
-    <fieldset>
-      <legend>preferred contact method</legend>
-   
-      <input type="radio" id = "contact-phone" name="contact" value="phone"/>
-      <label for = "contact-phone">Phone </label>
-      
-      <input type="radio" id = "contact-email" name="contact" value="email"/>
-      <label for = "contact-email">Email </label>
     
-     </fieldset>
+  <h2> Submit Your Feedback </h2>
 
-     <!-- Additional Features -->
-     <fieldset>
-      <legend>additional features of interest</legend>
-   
-      <input type="checkbox" id = "dark-mode" name="features" value="dark-mode"/>
-      <label for = "dark-mode">Dark mode </label>
+  <form>
+      <!-- Full Name -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="First name Last name" required>
+    <br><br>
+
+    <!-- Email -->
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="email@address.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+    <!-- using regular expression to validate input for @ symbol -->
+    <br><br>
+
+    <!-- Password -->
+    <label for="pwd">Password:</label>
+    <input type="password" id="pwd" name="pwd" maxlength="16" minlength="6" required>
+    <br><br>
+    
+    <!-- Preferred Contact Method -->
+    <fieldset>
+      <legend>Preferred Contact Method</legend>
       
-      <input type="checkbox" id = "bigger-button" name="features" value="buttons"/>
-      <label for = "bigger-button">Bigger Buttons </label>
+      <input type="radio" id="contact-email" name="contact" value="email" required/>
+      <label for="contact-email">Email</label>
+
+      <input type="radio" id="contact-none" name="contact" value="none" required/>
+      <label for="contact">Text message</label>
+
+      <input type="radio" id="contact-phone" name="contact" value="phone" required/>
+      <label for ="contact-phone">Phone</label>
+      
     </fieldset>
-     <!-- Comments -->
+
+    <br><br>
+
+    <!-- Feedback Type -->
+    <label for="feedback-type">Feedback Type:</label>
+    <select id="feedback-type" name="feedback-type" required>
+      <option value="">Select type</option>
+      <!-- empty value field triggers the "required" alert -->
+      <option value="request">Request</option>
+      <option value="issue">Issue</option>
+      <option value="comment">Comment</option>
+    </select>
+    <br><br>
+
+    <!-- Comments -->
     <label for="comments">Comments:</label><br>
-    <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br><br>
+    <textarea id="comments" name="comments" rows="5" cols="50" placeholder="We appreciate your feedback!"></textarea>
+    
+    <br><br>
+
+    <!-- Additional Features of Interest-->
+    <fieldset>
+      <legend>Additional Features Of Interest</legend>
+      
+      <input type="checkbox" id="see-comments" name="features" value="comments" checked required> 
+      <!-- by using "required" here, all other elements with name="features" are required as well -->
+      <label for="see-comments">See comments</label>
+
+      <input type="checkbox" id ="dark-mode" name="features" value="dark-mode">
+      <label for="dark-mode">Dark mode</label>
+      
+      <input type="checkbox" id="bigger-button" name="features" value="buttons">
+      <label for="bigger-button">Bigger buttons</label>
+    </fieldset>
+
+    <br><br>
 
     <!-- Submit -->
     <button type="submit">Submit</button>
- </form>
+  </form>
 </body>
 </html>
